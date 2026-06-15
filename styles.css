@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* Glassmorphism class */
+.glass {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+#welcome h1 {
+    line-height: 1.6 !important;
+}
+
+/* Custom animations */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Slide in from left with premium deceleration curve */
+@keyframes flyInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-120px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-fly-left {
+    animation: flyInFromLeft 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Slide in from right keyframes */
+@keyframes flyInFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(180px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Unique animation delay helper classes for stagger effect */
+.animate-fly-right-s1 { animation: flyInFromRight 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-fly-right-s2 { animation: flyInFromRight 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-fly-right-s3 { animation: flyInFromRight 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-fly-right-s4 { animation: flyInFromRight 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-fly-right-s5 { animation: flyInFromRight 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+/* Floating effect keyframes and sub-durations to keep it looking organic */
+@keyframes floatSlow1 {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+@keyframes floatSlow2 {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+}
+@keyframes floatSlow3 {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.animate-float-s1 { animation: floatSlow1 5s ease-in-out infinite; }
+.animate-float-s2 { animation: floatSlow2 6s ease-in-out infinite; }
+.animate-float-s3 { animation: floatSlow3 4s ease-in-out infinite; }
+.animate-float-s4 { animation: floatSlow1 7s ease-in-out infinite; }
+
+/* Circle styling for central hero hub */
+.circle-container {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    background: linear-gradient(135deg, rgba(37, 170, 225, 0.25), rgba(64, 228, 149, 0.25));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.circle-container:hover {
+    transform: scale(1.05);
+}
+
+.circle-inner {
+    width: 172px;
+    height: 172px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.hero-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-47.5%, -42%) scale(1.7);
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: white;
+}
+
+/* Orbit rotations */
+@keyframes spin-cw {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+@keyframes spin-ccw {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+}
+.animate-spin-cw {
+    animation: spin-cw 35s linear infinite;
+}
+.animate-spin-ccw {
+    animation: spin-ccw 35s linear infinite;
+}
+
+/* SVG Line animated dash */
+@keyframes dash {
+    to {
+        stroke-dashoffset: -20;
+    }
+}
+.animate-dash {
+    stroke-dashoffset: 0;
+    animation: dash 1.5s linear infinite;
+}
+
+/* Orbit Animations & Premium SaaS Effects */
+@keyframes orbit-rotate-cw {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+@keyframes orbit-rotate-ccw {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+}
+.animate-orbit-cw {
+    transform-origin: 100px 100px;
+    animation: orbit-rotate-cw 40s linear infinite;
+}
+.animate-orbit-ccw {
+    transform-origin: 100px 100px;
+    animation: orbit-rotate-ccw 30s linear infinite;
+}
+
+.glass-premium {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.glow-blue-strong {
+    box-shadow: 0 0 30px rgba(37, 99, 235, 0.3);
+}
+.glow-blue {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.22);
+}
+.glow-sky {
+    box-shadow: 0 0 45px rgba(14, 165, 233, 0.3);
+}
+.glow-pink {
+    box-shadow: 0 0 30px rgba(236, 72, 153, 0.2);
+}
+.glow-sky-soft {
+    box-shadow: 0 0 45px rgba(14, 165, 233, 0.25);
+}
+
